@@ -1,0 +1,91 @@
+baseURL: /
+languageCode: es-es
+defaultContentLanguage: es-es
+title: Mi blog de ejemplo
+theme: hugo-tranquilpeak-theme
+disqusShortname: hugo-tranquilpeak-theme
+paginate: 7
+canonifyurls: yes
+permalinks:
+  post: /:year/:month/:slug/
+taxonomies:
+  archive: archives
+  category: categories
+  tag: tags
+author:
+  bio: Este es un blog de ejemplo y forma parte de una serie de páginas para mostrar como usar RMarkdown y compartir tu trabajo.
+  gravatarEmail: 
+  job: Fan de R
+  location: Buenos Aires
+  name: Pao Corrales
+  picture: https://placekitten.com/300/300
+menu:
+  links:
+    - identifier: github
+      name: GitHub
+      pre: <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      url: https://github.com/paocorrales/03_Webs-RMarkdown
+      weight: 1
+#    - identifier: stackoverflow
+#      name: Stack Overflow
+#      pre: <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+#      url: https://stackoverflow.com/users/636472/kakawait
+#      weight: 2
+  main:
+    - identifier: home
+      name: Inicio
+      pre: <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      url: /
+      weight: 1
+    - identifier: categories
+      name: Categorías
+      pre: <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      url: /categories
+      weight: 2
+    - identifier: tags
+      name: Tags
+      pre: <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      url: /tags
+      weight: 3
+    - identifier: archives
+      name: Archivo
+      pre: <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      url: /archives
+      weight: 4
+    - identifier: about
+      name: Sobre mí
+      pre: <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      url: /#about
+      weight: 5
+#  misc:
+#    - identifier: rss
+#      name: RSS
+#      pre: <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+#      url: /index.xml
+#      weight: 1
+params:
+  autoThumbnailImage: yes
+  clearReading: yes
+  coverImage: img/cover_daniellenavarro_1920x1080.jpg
+  description: Un blog de ejemplo
+  header:
+    rightLink:
+      class: ''
+      icon: ''
+      url: /#about
+  hierarchicalCategories: yes
+  imageGallery: yes
+  sharingOptions:
+    - icon: fa-facebook-official
+      name: Facebook
+      url: https://www.facebook.com/sharer/sharer.php?u=%s
+    - icon: fa-twitter
+      name: Twitter
+      url: https://twitter.com/intent/tweet?text=%s
+#    - icon: fa-google-plus
+#      name: Google+
+#      url: https://plus.google.com/share?url=%s
+  sidebarBehavior: 1
+  syntaxHighlighter: highlight.js
+  thumbnailImage: yes
+  thumbnailImagePosition: bottom
