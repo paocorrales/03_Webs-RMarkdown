@@ -1,0 +1,72 @@
+---
+title: Cómo generar un blog con blogdown por primera vez
+author: Pao Corrales
+date: '2020-11-20'
+slug: como-generar-un-blog
+categories: ["primer blog"]
+tags: []
+thumbnailImage: http://placekitten.com/500/500
+thumbnailImagePosition: left
+keywords:
+  - blog
+---
+
+Si querés generar tu blog por primera vez, este es el post que necesitas!
+
+<!--more-->
+
+Primero lo primero, instalar el paquete {blogdown} y Hugo el generador de sitios web estáticos que usa blogdown.
+
+```{r eval=FALSE}
+install.packages("blogdown")
+blogdown::install_hugo()
+```
+
+Esto se hace una sola vez y a menos que quieras actualizar el paquete o Hugo no es necesario que lo recuerdes. Y un paréntesis sobre eso, no actualices nada a menos que tengas tiempo para resolver posibles problemas de versiones!
+
+Para generar un blog por primera vez hay dos opciones, en cualquier caso siepre el blog vivivá dentro de un proyecto.
+
+* **Desde el menú Nuevo Proyecto de RStudio**
+
+1er paso
+
+![Menú File -> New proyect -> New Directory](/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown1.png)
+
+2do paso
+
+![Website using Hugo](/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown2.png)
+
+3er paso
+
+![Completá con el nombre del tema elegido o usá el tema por defecto.](/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown3.png)
+
+Al hacer click en "Creat Project" se abrirá automáticamente el nuevo proyecto en RStudio, se descargará el tema elegido (en este ejemplo `hugo-tranquilpeak-theme`, el mismo que genera este blog que estás mirando) y genera la estructura de archivos necesaria. 
+
+En esta última pantalla hay varias opciones importantes además del campo para definir el tema. 
+
+La opción `Install Hugo automatically` instalará Hugo si olvidaste hacerlo, `Add sample blog post` descarga post de ejemplo dentro del tema que normalmente tienen información sobre como se usa ese tema en particular y pueden ser útiles (por supuesto, luego hay que borrarlos!), lo mismo para `Add example site of the theme` (aunque no todos los temas tienen esto). Finalmente suelo seleccionar `Open in new session` para trabajar en una ventana de RStudio independiente. 
+
+
+* **Desde la consola**
+
+También se puede crear el blog desde la consola. Por defecto el blog se crea en la carpeta donde está abierto RStudio, mi recomendación es correr la siguiente linea de código luego de haber generado un nuevo proyecto para la página web.
+
+```{r eval=FALSE}
+blogdown::new_site(theme = "kakawait/hugo-tranquilpeak-theme")
+```
+
+Esta función tiene argumentos para definir todas las opciones que se ven en el menú de la primera opción. 
+
+Ahora si, ya tenemos el blog. Hay dos funciones de {blogdown} que van a ser impresindibles a partir de ahora:
+
+```{r eval=FALSE}
+blogdown::serve_site()
+```
+
+`serve_site()` genera un servidor local y muestra la web en la pestaña "Viewer" de RStudio o en cualquier explorador. Además actualiza la web con cada cambio lo que permite previsualizar un post o cualquier parte de la web a medida que la vamos generando.
+
+```{r eval=FALSE}
+blogdown::build_site(build_rmd = TRUE)
+```
+
+Construye el sitio, a.k.a. genera los html que le dan vida a tu blog. Esto es necesario si el servidor donde vas a publicar tu blog no soporta Hugo. Por ejemplo, si usas GitHub Pages vas a necesitar construir el sitio luego de cada actualización. Pero si usas Netlify podés configurarlo para que "haga el build" del blog directamente desde el servidor. 

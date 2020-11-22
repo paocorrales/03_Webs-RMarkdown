@@ -1,0 +1,56 @@
+---
+title: Cómo generar un blog con blogdown por primera vez
+author: Pao Corrales
+date: '2020-11-20'
+slug: como-generar-un-blog
+categories: ["primer blog"]
+tags: []
+thumbnailImage: http://placekitten.com/500/500
+thumbnailImagePosition: left
+keywords:
+  - blog
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Si querés generar tu blog por primera vez, este es el post que necesitas!</p>
+<!--more-->
+<p>Primero lo primero, instalar el paquete {blogdown} y Hugo el generador de sitios web estáticos que usa blogdown.</p>
+<pre class="r"><code>install.packages(&quot;blogdown&quot;)
+blogdown::install_hugo()</code></pre>
+<p>Esto se hace una sola vez y a menos que quieras actualizar el paquete o Hugo no es necesario que lo recuerdes. Y un paréntesis sobre eso, no actualices nada a menos que tengas tiempo para resolver posibles problemas de versiones!</p>
+<p>Para generar un blog por primera vez hay dos opciones, en cualquier caso siepre el blog vivivá dentro de un proyecto.</p>
+<ul>
+<li><strong>Desde el menú Nuevo Proyecto de RStudio</strong></li>
+</ul>
+<p>1er paso</p>
+<div class="figure">
+<img src="/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown1.png" alt="Menú File -&gt; New proyect -&gt; New Directory" />
+<p class="caption">Menú File -&gt; New proyect -&gt; New Directory</p>
+</div>
+<p>2do paso</p>
+<div class="figure">
+<img src="/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown2.png" alt="Website using Hugo" />
+<p class="caption">Website using Hugo</p>
+</div>
+<p>3er paso</p>
+<div class="figure">
+<img src="/post/2020-11-22-como-generar-un-blog/index.es-es_files/new_blogdown3.png" alt="Completá con el nombre del tema elegido o usá el tema por defecto." />
+<p class="caption">Completá con el nombre del tema elegido o usá el tema por defecto.</p>
+</div>
+<p>Al hacer click en “Creat Project” se abrirá automáticamente el nuevo proyecto en RStudio, se descargará el tema elegido (en este ejemplo <code>hugo-tranquilpeak-theme</code>, el mismo que genera este blog que estás mirando) y genera la estructura de archivos necesaria.</p>
+<p>En esta última pantalla hay varias opciones importantes además del campo para definir el tema.</p>
+<p>La opción <code>Install Hugo automatically</code> instalará Hugo si olvidaste hacerlo, <code>Add sample blog post</code> descarga post de ejemplo dentro del tema que normalmente tienen información sobre como se usa ese tema en particular y pueden ser útiles (por supuesto, luego hay que borrarlos!), lo mismo para <code>Add example site of the theme</code> (aunque no todos los temas tienen esto). Finalmente suelo seleccionar <code>Open in new session</code> para trabajar en una ventana de RStudio independiente.</p>
+<ul>
+<li><strong>Desde la consola</strong></li>
+</ul>
+<p>También se puede crear el blog desde la consola. Por defecto el blog se crea en la carpeta donde está abierto RStudio, mi recomendación es correr la siguiente linea de código luego de haber generado un nuevo proyecto para la página web.</p>
+<pre class="r"><code>blogdown::new_site(theme = &quot;kakawait/hugo-tranquilpeak-theme&quot;)</code></pre>
+<p>Esta función tiene argumentos para definir todas las opciones que se ven en el menú de la primera opción.</p>
+<p>Ahora si, ya tenemos el blog. Hay dos funciones de {blogdown} que van a ser impresindibles a partir de ahora:</p>
+<pre class="r"><code>blogdown::serve_site()</code></pre>
+<p><code>serve_site()</code> genera un servidor local y muestra la web en la pestaña “Viewer” de RStudio o en cualquier explorador. Además actualiza la web con cada cambio lo que permite previsualizar un post o cualquier parte de la web a medida que la vamos generando.</p>
+<pre class="r"><code>blogdown::build_site(build_rmd = TRUE)</code></pre>
+<p>Construye el sitio, a.k.a. genera los html que le dan vida a tu blog. Esto es necesario si el servidor donde vas a publicar tu blog no soporta Hugo. Por ejemplo, si usas GitHub Pages vas a necesitar construir el sitio luego de cada actualización. Pero si usas Netlify podés configurarlo para que “haga el build” del blog directamente desde el servidor.</p>
