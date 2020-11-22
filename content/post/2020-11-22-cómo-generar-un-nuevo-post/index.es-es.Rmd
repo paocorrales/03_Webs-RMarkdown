@@ -1,0 +1,43 @@
+---
+title: Cómo generar un nuevo post
+author: Pao Corrales
+date: '2020-11-22'
+slug: como-generar-un-post
+categories: ["primer blog"]
+tags: []
+thumbnailImage: http://placekitten.com/500/600
+thumbnailImagePosition: left
+keywords:
+  - blog
+---
+
+¿Todo listo? Es hora de escribir el primer post!
+
+<!--more-->
+
+En general y en casi todos los temas una entrada de un blog o post en una página de Hugo vive en `content/post` y dependiendo del tema se pueden generar nuevos *tipos* de publicaciones. Si bien es válido crear un nuevo archivo .Rmd en esa carpeta y arrancar a escribir, {blogdown} tiene una función para hacer esto y, mejor aún, un "Addin" para hacernos la vida más fácil.
+
+Los addins están en la barra de opciones de RStudio y, siempre que tengas instalado {blogdown}, te van a aparecer los addins disponibles en el menú desplegable. Al elegir "New post" aparece una pantalla donde se puede completar la información principal del post, pero como todo lo que va en el encabezado, se puede modificar luego.
+
+![Menú con opciones para generar un nuevo post](/post/2020-11-24-cómo-generar-un-nuevo-post/index.es-es_files/new_post.png)
+
+Dependiendo del tema, seguro que se pueden agregar más opciones al encabezado. Ese tipo de opciones no aparece en el menú pero se pueden agregar luego. Acá vuelve a entrar en juego revisar los posts de ejemplos y los archivos que lo generan.  Por ejemplo este tema permite agregar una imagen asociada al post que aparecerá en la portada.
+
+```yaml
+thumbnailImage: http://placekitten.com/500/600 # Obvio, gatitos
+thumbnailImagePosition: left
+```
+
+El post se guardará en una carpeta que tiene como nombre la fecha y el nombre del post y adentro el archivo .Rmd y su html correspondiente.
+
+Y ahora en contenido. La magia de trabajar con un archivo .Rmd (en vez de un .md) es que podemos incluir código de R (y otros lenguajes). Un post funciona de la misma manera que cualquier informe o reporte que hayas escrito en RMarkdown y de hecho podrías publicar un post copiado el archivo y haciendo pequeños cambios en el encabezado.
+
+Algo que puede ser confuso es incluir imágenes, mi recomendación para no tener que aprender en que subcarpeta guardar esa imagen, es usar el addin "Insert image" que se encargará de absolutamente todo.
+
+Último consejo, al crear un nuevo post será necesario actualizar el servidor local para poder ver cualquier cambio. Para eso es necesario correr las siguientes lineas:
+
+```{r eval=FALSE}
+blogdown::stop_server()
+blogdown::serve_site()
+```
+
