@@ -1,0 +1,40 @@
+---
+title: Cómo hacer propio un blog
+author: Pao Corrales
+date: '2020-11-21'
+slug: como-configurar-un-blog
+categories: ["primer blog"]
+tags: []
+thumbnailImage: http://placekitten.com/600/600
+thumbnailImagePosition: left
+keywords:
+  - blog
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Ya tenés tu blog y ahora querés personalizarlo, en este post vas a encontrar cuales son los elementos más importantes que tenés que modificar en el archvo config.yaml</p>
+<!--more-->
+<p>Los temas de Hugo son muy lindos (y a veces cuesta elegir uno!) pero igualmente hay que hacerlos propios cambiando el nombre, agregando links a otras redes sociales o plataformas, tal vez agregando una imagen de portada o cambiando el color principal. En este pequeño post compilé todos los cambios que le hice a este blog para que tenga la pinta actual. Si elegiste otro tema es posible que algunas cosas sean distintas pero seguro que este post y los post de ejemplo en tu tema te van a dar una pista de como avanzar.</p>
+<div id="config.yaml" class="section level2">
+<h2>config.yaml</h2>
+<p>Este archivo controla gran parte de lo que se ve en el blog o al menos te dan una pista de que archivos son los involucrados. Vamos por orden.</p>
+<ul>
+<li><code>baseURL</code> te permite indica la url donde vivirá tu blog.</li>
+<li><code>lenguageCode</code> define en que idioma se muestra la web. Algunos temas de Hugo ya tienen incorporada la opción multilingue que permite mostrar en contenido en más de un idioma. Otros soportan solo un idioma pero te permite elegir cual dentro de las opciones disponibles. Esto depende de que el tema tenga el archivo que “traduce” todos los elementos al idioma deseado, podés chequear si existe el es-es.yaml en la carpeta i18n. Si no existe y podés traducirlo desde otro idoma, es una buena idea hacer pull request en el repo del tema para que otras personas pueda aprovecharlo.</li>
+<li><code>title</code> en este tema, todavía no encuentro donde aparece pero por las dudas conviene cambiarlo por algo razonable.</li>
+</ul>
+<p>Varias lineas después, aparecen los campos donde podemos poner información propia:</p>
+<ul>
+<li><code>author</code> y todos los campos asociados a la persona que creó el blog. Si terminas publicando esta página tené en cuenta que la info que pongas quedará publica. Dentro de esta selección <code>gravatarEmail</code> toma la foto de perfil que tengas en Gravatar (si es que tenés una!) pero también se puede definir la foto de perfil que aparece en el blog indicando una url o el path a una imagen en el campo <code>picture</code>.</li>
+<li><code>menu</code> contiene links a otras páginas por ejemplo GitHub y selecciones en la web. En este caso tuve que traducir el nombre de cada elemento para que aparezca en español pero dejando el <code>identifier</code> tal cual está para que no se rompa nada.</li>
+</ul>
+<p>Ahora la gran sección <code>params</code></p>
+<ul>
+<li><code>coverImage</code> permite cambiar la imagen que se muestra de fondo, para este tema en particular la imagen si o si debe ser de 1920 x 1080 pixeles y pueden guardarla en la carpeta <code>static/img</code>. Que se se ve en este blog está generada con R por Danielle Navarro, puede ver sus hermosas creaciones <a href="https://art.djnavarro.net/">acá</a>.</li>
+<li><code>sharingOptions</code> perte agregar botones para compartir un post en particular en alguna red social, para este blog decidí comentar el de Google+ porque QNPD.</li>
+</ul>
+<p>Seguro alguna otra característica de tu tema te molesta y te gustaría cambiar. El primer lugar a buscar es los artículos de ejemplo, el segundo lugar es la maraña de archivos dentro de la carpeta del tema. Crear un blog con {blogdown} lleva 15 minutos, cambiar ese colorcito que aparece en ese cuadradito de esa página capaz lleva horas!</p>
+</div>
