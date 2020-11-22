@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mi blog de ejemplo</title>
+    <link>/</link>
+    <description>Recent content on Mi blog de ejemplo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo generar un nuevo post</title>
+      <link>/2020/11/como-generar-un-post/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/11/como-generar-un-post/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;¿Todo listo? Es hora de escribir el primer post!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cómo hacer propio un blog</title>
+      <link>/2020/11/como-configurar-un-blog/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/11/como-configurar-un-blog/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Ya tenés tu blog y ahora querés personalizarlo, en este post vas a encontrar cuales son los elementos más importantes que tenés que modificar en el archvo config.yaml&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cómo generar un blog con blogdown por primera vez</title>
+      <link>/2020/11/como-generar-un-blog/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/11/como-generar-un-blog/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Si querés generar tu blog por primera vez, este es el post que necesitas!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
